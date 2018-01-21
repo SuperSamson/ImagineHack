@@ -1,0 +1,234 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+
+    <style>
+    #username{
+      margin: auto;
+      font-size: x-large;
+      font-style: italic;
+      font-family: monospace;
+    }
+    </style>
+
+
+</head>
+<body>
+
+<div class="ui top attached menu">
+    <a class="item" id="menu">
+        <i class="sidebar icon"></i>
+        Menu
+    </a>
+    <p id="username">serenity.ai</p>
+</div>
+
+<div class="fixed-action-btn horizontal">
+    <a class="btn-floating btn-large red">
+        <i class="arrow left icon"></i>
+    </a>
+    <ul>
+        <li><a class="btn-floating btn-large green" href="/map"><i class="legal icon"></i></a></li>
+        <li><a class="btn-floating btn-large blue" onclick="return openModal()"><i class="plus icon"></i></a></li>
+    </ul>
+</div>
+
+<div class="ui modal">
+      <i class="close icon"></i>
+
+      <div class="header">
+        Please Enter the Following Information
+      </div>
+
+      <div class="image content">
+
+        <div class="description">
+          <form class="ui form">
+
+              <div class="field">
+                <label>Your Name</label>
+                <textarea rows="2"></textarea>
+              </div>
+
+              <div class="field">
+                <label>Description</label>
+                <textarea></textarea>
+              </div>
+          </form>
+
+        <div class="inline fields">
+    <label for="fruit">Select the battle category:</label>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" checked="" tabindex="0" class="hidden">
+        <label>Music</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Dance</label>
+      </div>
+    </div>
+    <div class="field">
+      <div class="ui radio checkbox">
+        <input type="radio" name="fruit" tabindex="0" class="hidden">
+        <label>Sports</label>
+      </div>
+    </div>
+
+  </div>
+
+        </div>
+      </div>
+
+      <div class="actions">
+        <div class="ui red deny button">
+          Cancel
+        </div>
+        <div class="ui positive button">
+          Confirm
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="ui bottom attached segment pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+        <a class="item">
+            <i class="home icon"></i>
+            Home
+        </a>
+        <a class="item">
+            <i class="setting icon"></i>
+            Setting
+        </a>
+        <button class="item">
+            <i class="Activity"></i>
+            <a href="/chat">Chat</a>
+        </button>
+        <button class="item" id="btnLogout">
+            <i class="sign out icon"></i>
+            Log Out
+        </button>
+    </div>
+
+
+
+    <div class="ui inverted segment">
+  <div class="ui inverted relaxed divided list">
+
+    <div class="item">
+      <div class="content">
+        <a href="/reg">
+        <div class="header">Happy Tutorial Group</div>
+        St. James' Settlement
+        </a>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Basketball</div>
+        St. James' Settlement
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Football</div>
+        St. James' Settlement
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Swimming</div>
+        YAN OI TONG
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Quick input method class</div>
+        YAN OI TONG
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Rubbish Transformation</div>
+        YAN OI TONG
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Junior Master Chief</div>
+        YMCA
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Island Travel</div>
+        YMCA
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Chat Group</div>
+        YMCA
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="content">
+        <div class="header">Happy Day</div>
+        YMCA
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+
+
+</div>
+
+<script src="../js/logout.js"></script>
+
+<script>
+    $('.ui.radio.checkbox')
+    .checkbox()
+    ;
+
+    $('.ui.sidebar')
+    .sidebar({
+        context: $('.bottom.segment')
+    })
+    .sidebar('attach events', ' .menu .item')
+    ;
+
+    function openModal() {
+        $('.ui.modal').modal('show');
+    }
+</script>
+
+</body>
+</html>

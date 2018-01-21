@@ -1,0 +1,111 @@
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/login.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+
+    <!-- BG -->
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+    /*  Background fallback in case of IE8 & down, or in case video doens't load, such as with slower connections  */
+      background: #333;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    /* The only rule that matters */
+    #video-background {
+    /*  making the video fullscreen  */
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      z-index: -100;
+      background: linear-gradient(90deg,#00f 80%,transparent 80.1%);
+    }
+
+    /* These just style the content */
+
+    h1 {
+      position: absolute;
+      top: 60%;
+      width: 100%;
+      font-size: 36px;
+      letter-spacing: 3px;
+      color: #fff;
+      font-family: Oswald, sans-serif;
+      text-align: center;
+    }
+
+    h1 span {
+      font-family: sans-serif;
+      letter-spacing: 0;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    h1 span a {
+      color: #fff;
+    }
+    </style>
+    <!-- BG -->
+</head>
+
+<body>
+
+    <!-- BG -->
+
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+    <!--  Content  -->
+    <article>
+      <h1>serenity.ai<br /> <span>(Made by <a href="http://mattgross.io" target="_blank">inFamous</a>)</span></h1>
+    </article>
+
+    <!--  Video is muted & autoplays, placed after major DOM elements for performance & has an image fallback  -->
+    <video autoplay loop id="video-background" muted plays-inline>
+      <source src="../video/bg.mp4" type="video/mp4">
+    </video>
+
+    <!-- BG -->
+
+    <!-- <img src="../img/logo.png" width="20%"> -->
+    <br>
+    <br>
+
+    <div class="ui form">
+        <input id="txtEmail" type="email" placeholder="Email" size="35">
+
+        <input id="txtPassword" type="password" placeholder="Password" size="35">
+
+        <button id="btnLogin" class="ui primary button">Log in</button>
+
+        <button id="btnSignUp" class="ui button">Sign up</button>
+    </div>
+
+    <!-- Sign in failure nag bar -->
+    <div class="ui inline cookie nag" style="background-color:indianred;">
+      <span class="title">
+        Login Failed. Please Retry.
+      </span>
+      <i class="close icon"></i>
+    </div>
+    <!-- End of nag bar -->
+    <script src="../js/login.js"></script>
+
+</body>
+
+</html>

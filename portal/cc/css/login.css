@@ -1,0 +1,22 @@
+html {
+  text-align: center;
+}
+h1.ui.header {
+    font-size: 50px;
+}
+.ui.form {
+    font-size: 2rem;
+}
+body{
+  margin: 10%;
+  padding: 70px;
+  line-height: 500%;
+  font-size: 120%;
+  background-color: #f1f1f1;
+}
+
+img {
+    max-width: 100%;
+    width: 30%;
+    height: auto;
+}

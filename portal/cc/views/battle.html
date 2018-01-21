@@ -1,0 +1,173 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../semantic/dist/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous"></script>
+    <script src="../semantic/dist/semantic.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
+    <style>
+      body {
+        background: #F7F7F7;
+        margin: 0;
+        padding: 0;
+      }
+
+      #video-container {
+        margin: 2em auto 0;
+        width: 550px;
+        padding: 2em;
+        background: white;
+        -webkit-box-shadow: 0 1px 10px #D9D9D9;
+        -moz-box-shadow: 0 1px 10px #D9D9D9;
+        -ms-box-shadow: 0 1px 10px #D9D9D9;
+        -o-box-shadow: 0 1px 10px #D9D9D9;
+        box-shadow: 0 1px 10px #D9D9D9;
+      }
+
+      /*#camera-stream {
+        -webkit-filter: blur(3px);
+        -webkit-filter: grayscale(1);
+        -webkit-filter: sepia(1);
+        -webkit-filter: brightness(2.5);
+        -webkit-filter: contrast(5);
+        -webkit-filter: hue-rotate(125deg);
+        -webkit-filter: invert(1);
+        -webkit-filter: saturate(3);
+        -webkit-filter: opacity(0.3);
+      }*/
+
+      .ui.button, .ui.buttons .button, .ui.buttons .or {
+        font-size: 1.2rem;
+      }
+
+  </style>
+
+</head>
+<body>
+
+
+<div class="ui top attached menu">
+    <a class="item" id="menu">
+        <i class="sidebar icon"></i>
+        Menu
+    </a>
+</div>
+
+<div class="ui bottom attached segment pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu">
+      <a class="item" onclick="window.location.href='/'">
+          <i class="home icon"></i>
+          Home
+      </a>
+
+      <a class="item">
+          <i class="setting icon"></i>
+          Setting
+      </a>
+
+      <button class="item" id="btnLogout">
+          <i class="sign out icon"></i>
+          Log Out
+      </button>
+    </div>
+    <div class="pusher">
+    <div id="video-container">
+      <video id="camera-stream" width="500" autoplay></video>
+    </div>
+    <script src="../js/battle.js"></script>
+
+    <br>
+    <div class="ui labeled button" tabindex="0">
+      <div class="ui red button">
+        <i class="heart icon"></i> Like
+      </div>
+    </div>
+
+    <script>
+      $('.ui.labeled.button > .red').click(function(e){
+        $('.progress').progress("increment", 4);
+      });
+    </script>
+
+    <div class="ui labeled button" tabindex="0" style="position:absolute; right:0">
+      <div class="ui green button">
+        <i class="heart icon"></i> Like
+      </div>
+    </div>
+    <script>
+      $('.ui.labeled.button > .green').click(function(e){
+        $('.progress').progress("decrement", 4);
+      });
+    </script>
+
+    <br>
+    <br>
+
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" id="paypal">
+    <input type="hidden" name="cmd" value="_donations">
+    <input type="hidden" name="business" value="InFamous@Freshlinker.com">
+    <input type="hidden" name="lc" value="US">
+    <input type="hidden" name="item_name" value="InFamous">
+    <input type="hidden" name="no_note" value="0">
+    <input type="hidden" name="currency_code" value="HKD">
+    <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+    <div class="ui labeled button" tabindex="0">
+      <div class="ui red button" onclick="$('#paypal').submit()">
+        <i class="paypal card icon"></i> Support
+      </div>
+    </div>
+
+    <div class="ui labeled button" tabindex="0" style="position:absolute; right:0">
+      <div class="ui green button" onclick="$('#paypal').submit()">
+        <i class="paypal card icon"></i> Support
+      </div>
+    </div>
+    </form>
+
+    <div class="ui red progress" style="background:#21BA45">
+      <div class="bar"></div>
+    </div>
+  </div>
+</div>
+
+<script src="../js/voting.js"</script>
+
+<script>
+    $('.ui.sidebar')
+    .sidebar({
+        context: $('.bottom.segment')
+    })
+    .sidebar('attach events', ' .menu .item')
+    ;
+
+</script>
+
+<!-- Versus bar animation -->
+<script>
+  setInterval(function(){
+    $('.progress').progress("set percent", Math.floor(Math.random() * 20) + 40);
+  }, 500);
+</script>
+<!-- End of Versus bar animation -->
+
+<script>
+  $('.ui.sidebar')
+  .sidebar({
+      context: $('.bottom.segment')
+  })
+  .sidebar('attach events', ' .menu .item')
+  ;
+</script>
+
+<script>
+  $('#paypal').submit(function(e) {
+      var w = window.open('about:blank','Popup_Window','toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=0,width=600,height=600');
+      this.target = 'Popup_Window';
+  });
+</script>
+<script src="js/logout.js"></script>
+</body>
+</html>
