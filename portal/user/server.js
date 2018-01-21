@@ -34,6 +34,8 @@ app.use("/reg", express.static(__dirname + '/reg'));
 
 app.use("/ok", express.static(__dirname + '/ok'));
 
+app.use("/chat", express.static(__dirname + '/chat'));
+
 app.listen(8080,function(){
   console.log("Live at Port 8080");
 });
